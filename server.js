@@ -1,3 +1,21 @@
+//deploying to GitHub
+/*
+    1. Make a .env file that stores the API_KEY --> access it by proccess.env.API_KEY
+    2. Make a .env_sample to show the user how to use the API_KEY in your project
+    3. Make a .gitignore when pushing files to github
+    4. In terminal:
+        a. git init
+        b. git add .
+        c. git commit -m "my first commit"
+    5. Make a git repos
+    6. In terminal:
+        a. git remote add origin https://github.com/LightFelcore/WeatherHere.git
+        b. git branch -M main
+        c. git push -u origin main
+    7. Done
+
+*/
+
 const express = require('express');
 const app = express();
 const fetch = require('node-fetch');
@@ -7,16 +25,14 @@ require('dotenv').config();
 
 //fetch is enkel mogelijk via client side. Node maakt fetch() mogelijk door bovenstaande module te importeren
 
-app.listen(3000, () => {
-    console.log('Listening on port 3000');
-});
+
 app.use(express.static('public'));
 app.use(express.json({
     limit: "1mb"
 }));
 
 
-
+const port = process.env.PORT || 3000;
 const database = new Datastore('database.db');
 database.loadDatabase();
 
@@ -60,4 +76,8 @@ app.get('/api', (request, response) => {
 
         response.json(data);
     });
+});
+
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`);
 });
