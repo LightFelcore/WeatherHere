@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><h1>The Weather Here</h1></p>
+    <div style="background: pink">
+        <p style="text-align: center; padding: 20px;">
+            Weather description: '<span style="font-style: italic; font-weight: bold;" id="summary"></span>' with a temperature of
+            <span style="font-weight: bold;" id="temperature"></span>&deg; Celcius. <br><br>
+            The concentration of particular matter (<span id="aq_parameter"></span>) is
+             <span style="font-weight: bold;" id="aq_value"></span> <span style="font-weight: bold;" id="aq_units"></span>
+            last read on <span style="font-weight: bold;" id="aq_date"></span>.
+        </p>
+    </div>
+    <p><a href="./index.html">index</a> | <a href="./check-ins.html">list</a></p>
+
+    <script src="./client.js"></script>
+</body>
+</html>
